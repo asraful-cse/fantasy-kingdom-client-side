@@ -1,0 +1,33 @@
+.serviceCard:hover img {
+	overflow: hidden;
+	transform: scale(1.2);
+	transition: transform 1s;
+}
+.card_border {
+	border-radius: 10px !important;
+	box-shadow: 0px 9px 29px -4px;
+}
+.name small {
+	font-size: 11px;
+	color: rgba(18, 33, 233, 0.494);
+	font-weight: 700;
+}
+.name strong {
+	font-size: 13px;
+	/* text-transform: uppercase; */
+	color: rgba(99, 108, 111, 0.715);
+	font-weight: 600;
+}
+.name h6 {
+	font-size: 18px;
+	text-transform: uppercase;
+	color: rgb(199, 89, 15);
+	font-weight: 500;
+	margin-top: 10px;
+}
+
+.name p {
+	font-size: 12px;
+	color: rgba(82, 92, 18, 0.749);
+	font-weight: 600;
+}

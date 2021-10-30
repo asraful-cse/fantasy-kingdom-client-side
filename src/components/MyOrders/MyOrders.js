@@ -18,7 +18,7 @@ const MyOrders = () => {
 	const handleDeleteUser = (id) => {
 		const proceed = window.confirm("Are you sure, you want to delete?");
 		if (proceed) {
-			const url = `http://localhost:5000/myOrder/${id}`;
+			const url = `http://localhost:5000/myOrders/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})
@@ -48,6 +48,7 @@ const MyOrders = () => {
 							<div className=" border border p-2 m-2">
 								<strong>Email: {order?.email}</strong>
 								<br />
+
 								<p>
 									{order?.name} <br />{" "}
 									<small className="text-warning fs-4">{order?.price}</small>

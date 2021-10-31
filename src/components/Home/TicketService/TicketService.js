@@ -10,9 +10,7 @@ import {
 import secondSection from "../../../images/4.jpg";
 import { Link } from "react-router-dom";
 import "./TicketService.css";
-import useFirebase from "../../../hooks/useFirebase";
 const TicketService = () => {
-	const { user } = useFirebase();
 	const [products, setProducts] = useState([]);
 	// Loading Data
 	useEffect(() => {
@@ -26,32 +24,14 @@ const TicketService = () => {
 	const props = useSpring({ number: 15, from: { number: 0 } });
 	const propsTwo = useSpring({ number: 20, from: { number: 0 } });
 	const propsThree = useSpring({ number: 10, from: { number: 0 } });
-	// add to cart
-	const handleAddToCart = (index) => {
-		const data = products[index];
-		data.email = user?.email;
-		console.log(data);
-		fetch(`http://localhost:5000/addOrder`, {
-			method: "POST",
-			headers: { "content-type": "application/json" },
-			body: JSON.stringify(data),
-		})
-			.then((res) => res.json())
-			.then((result) => {
-				console.log(result);
-				if (result.insertedId) {
-					alert("SUCCESSFULLY ADDED ");
-				} else {
-					alert("PLEASE TRY ANOTHER EMAIL ADDRESS");
-				}
-			});
-	};
+
 	return (
 		<>
 			<section id="book-ride" className="mt-5 container">
 				<h2 className="text-center fw-bolder">
 					{" "}
-					OUR TICKET <span style={{ color: "#ff4d30" }}>OFFERS & SERVICES</span>
+					OUR TICKET{" "}
+					<span style={{ color: "#ff4d30" }}>OFFERS AND SERVICES</span>
 				</h2>
 				<p
 					style={{ fontSize: "18px", color: "gray", textAlign: "justify" }}
@@ -93,13 +73,6 @@ const TicketService = () => {
 											<button className="btn btn-danger">Buy Now</button>
 										</Link>
 									</div>
-									<button
-										onClick={() => handleAddToCart(index)}
-										className="btn btn-warning m-2"
-									>
-										buy now
-										{/* <Link to="/myOrders">buy now</Link> */}
-									</button>
 								</div>
 							</div>
 						</div>

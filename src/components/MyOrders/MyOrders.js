@@ -15,17 +15,26 @@ const MyOrders = () => {
 	console.log(orders);
 	return (
 		<div>
-			<h1>MY ORDER LISTS {orders.length}</h1>
-			<div className="all-products">
-				<div className="row container text-center">
+			<br />
+			<br />
+			<div className="all-products container text-center">
+				<h1 style={{ borderBottom: "2px solid lightGray", padding: "6px" }}>
+					MY ORDER LISTS :-{" "}
+					<strong className="text-info ">{orders.length}</strong>
+				</h1>
+				<div className="row  text-center">
 					{orders?.map((pd, index) => (
 						<div className="col-md-6 col-lg-4">
 							<div className=" border border p-2 m-2">
-								<h4>{pd.email}</h4>
-								<h5>{pd?.name}</h5>
-								<h5>{pd?.price}</h5>
-								<h6>{pd?.description}</h6>
-								<button className="btn btn-danger m-2">delete</button>
+								<strong>Email: {pd.email}</strong>
+								<br />
+								<p>
+									{pd?.name} <br />{" "}
+									<small className="text-warning fs-4">{pd?.price}</small>
+								</p>
+								<button className="btn btn-info m-2">Pending</button>
+								<button className="btn btn-success m-2">Update</button>
+								<button className="btn btn-danger m-2">Delete</button>
 							</div>
 						</div>
 					))}

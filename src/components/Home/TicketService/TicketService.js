@@ -14,7 +14,7 @@ const TicketService = () => {
 	const [products, setProducts] = useState([]);
 	// Loading Data
 	useEffect(() => {
-		fetch("http://localhost:5000/products")
+		fetch("https://desolate-brook-49511.herokuapp.com/products")
 			.then((res) => res.json())
 			.then((data) => {
 				setProducts(data);
@@ -48,36 +48,44 @@ const TicketService = () => {
 					<br />
 				</p>
 				<br /> <br />
-				<div className="row ">
-					{products.map((pd, index) => (
-						<div className="mb-5 col-lg-4 col-sm-6  ">
-							<div className="card shadow-lg w-100 h-100 text-center rounded serviceCard card_border">
-								<div className="d-flex justify-content-center align-items-center h-75 p-2">
-									<img
-										src={pd?.imageURL}
-										className="card-img-top card_border"
-										alt=""
-										style={{ height: "86%", width: "75%" }}
-									/>
-								</div>
-								<div className="card-body name">
-									<small>{pd?.title}</small>
-									<h6 className="card-title">{pd?.name}</h6>
-									<strong>{pd?.time}</strong>
-								</div>
+				{products.length === 0 ? (
+					<div className="d-flex justify-content-center">
+						<div className="spinner-border" role="status">
+							<span className="visually-hidden">Loading...</span>
+						</div>
+					</div>
+				) : (
+					<div className="row ">
+						{products.map((pd, index) => (
+							<div className="mb-5 col-lg-4 col-sm-6  ">
+								<div className="card shadow-lg w-100 h-100 text-center rounded serviceCard card_border">
+									<div className="d-flex justify-content-center align-items-center h-75 p-2">
+										<img
+											src={pd?.imageURL}
+											className="card-img-top card_border"
+											alt=""
+											style={{ height: "86%", width: "75%" }}
+										/>
+									</div>
+									<div className="card-body name">
+										<small>{pd?.title}</small>
+										<h6 className="card-title">{pd?.name}</h6>
+										<strong>{pd?.time}</strong>
+									</div>
 
-								<div className="card-footer">
-									<div className="d-flex align-items-center justify-content-between ">
-										<h5 className="text-warning fw-bold">{pd?.price}</h5>
-										<Link to={`/service_detail/${pd?._id}`}>
-											<button className="btn btn-danger">Buy Now</button>
-										</Link>
+									<div className="card-footer">
+										<div className="d-flex align-items-center justify-content-between ">
+											<h5 className="text-warning fw-bold">{pd?.price}</h5>
+											<Link to={`/service_detail/${pd?._id}`}>
+												<button className="btn btn-danger">Booking Now</button>
+											</Link>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				)}
 			</section>
 			{/* extra section */}
 			<section
@@ -145,19 +153,19 @@ const TicketService = () => {
 				</div>
 			</section>
 			{/* extra section part 2 */}
-			<div class="card bg-dark text-white container ">
+			<div className="card bg-dark text-white container ">
 				<img
 					src={secondSection}
 					className="card-img "
 					alt="..."
 					style={{ opacity: "55%" }}
 				/>
-				<div class="card-img-overlay text-center ">
-					<h5 class="card-title text-danger fs-5">
+				<div className="card-img-overlay text-center ">
+					<h5 className="card-title text-danger fs-5">
 						RECREATION WITH EXCITEMENT
 					</h5>
 
-					<p class="card-text text-light fs-6">
+					<p className="card-text text-light fs-6">
 						Customers have to show the soft copy of this invoice to the
 						information counter of Fantasy Kingdom Complex.
 					</p>

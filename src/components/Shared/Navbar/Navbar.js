@@ -40,7 +40,10 @@ const Navbar = () => {
 								CONTACTS
 							</Link>
 							<Link to="/addServices" className="nav-link">
-								ADD SERVICES
+								ADD SERVICE
+							</Link>
+							<Link to="/manageOrder" className="nav-link">
+								MANAGE ALL ORDERS
 							</Link>
 							{user.email && (
 								<div>

@@ -8,7 +8,7 @@ const ServiceDetail = () => {
 	const [data, setData] = useState([]);
 	// const [products, setData] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5000/products")
+		fetch("https://desolate-brook-49511.herokuapp.com/products")
 			.then((res) => res.json())
 			.then((data) => setData(data));
 	}, []);
@@ -20,7 +20,7 @@ const ServiceDetail = () => {
 		const indexAdded = data[index];
 		indexAdded.email = user?.email;
 		console.log(data);
-		fetch(`http://localhost:5000/addOrder`, {
+		fetch(`https://desolate-brook-49511.herokuapp.com/addOrder`, {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(indexAdded),
@@ -78,16 +78,16 @@ const ServiceDetail = () => {
 					CLICK TO CONFIRM YOUR ORDER :
 				</h2>
 				<br />
-				<div class="row row-cols-1 row-cols-md-4 g-5 d-flex justify-content-center align-item-center ">
+				<div className="row row-cols-1 row-cols-md-4 g-5 d-flex justify-content-center align-item-center ">
 					{data?.map((pd, index) => (
-						<div class="col ">
+						<div className="col ">
 							<div
-								class="card"
+								className="card"
 								style={{ backgroundColor: "rgb(191 246 255 / 48%)" }}
 							>
 								<img
 									src={pd?.imageURL}
-									class="card-img-top img-fluid "
+									className="card-img-top img-fluid "
 									alt="..."
 									style={{
 										height: "160px",
@@ -95,13 +95,13 @@ const ServiceDetail = () => {
 										objectFit: "cover",
 									}}
 								/>
-								<div class="card-body">
-									<small class="card-title">{pd?.name}</small>
+								<div className="card-body">
+									<small className="card-title">{pd?.name}</small>
 									<button
 										onClick={() => handleAddToCart(index)}
 										className="btn btn-danger m-2"
 									>
-										Order Confirm
+										Book Now
 									</button>
 								</div>
 							</div>

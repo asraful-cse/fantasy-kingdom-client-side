@@ -14,7 +14,7 @@ const AddEvent = () => {
 	const onSubmit = (data) => {
 		data.email = user?.email;
 		axios
-			.post("http://localhost:5000/addEvent", data)
+			.post("https://desolate-brook-49511.herokuapp.com/addEvent", data)
 
 			.then((res) => {
 				if (res.data.insertedId) {

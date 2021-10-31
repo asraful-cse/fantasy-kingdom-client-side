@@ -8,7 +8,7 @@ const MyOrders = () => {
 	const email = user.email;
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/myOrders/${email}`)
+		fetch(`https://desolate-brook-49511.herokuapp.com/myOrders/${email}`)
 			.then((res) => res.json())
 			.then((data) => setOrders(data));
 	}, [email]);
@@ -18,7 +18,7 @@ const MyOrders = () => {
 	const handleDeleteUser = (id) => {
 		const proceed = window.confirm("Are you sure, you want to delete?");
 		if (proceed) {
-			const url = `http://localhost:5000/myOrders/${id}`;
+			const url = `https://desolate-brook-49511.herokuapp.com/myOrders/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})
@@ -37,6 +37,7 @@ const MyOrders = () => {
 		<div>
 			<br />
 			<br />
+
 			<div className="all-products container text-center">
 				<h1 style={{ borderBottom: "2px solid lightGray", padding: "6px" }}>
 					MY ORDER LISTS :-{" "}

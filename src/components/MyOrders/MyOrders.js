@@ -13,6 +13,26 @@ const MyOrders = () => {
 			.then((data) => setOrders(data));
 	}, [email]);
 	console.log(orders);
+
+	// DELETE AN USER
+	const handleDeleteUser = (id) => {
+		const proceed = window.confirm("Are you sure, you want to delete?");
+		if (proceed) {
+			const url = `http://localhost:5000/myOrder/${id}`;
+			fetch(url, {
+				method: "DELETE",
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.deletedCount > 0) {
+						alert("deleted successfully");
+						const remainingUsers = orders.filter((order) => order._id !== id);
+						setOrders(remainingUsers);
+					}
+				});
+		}
+	};
+
 	return (
 		<div>
 			<br />
@@ -20,21 +40,23 @@ const MyOrders = () => {
 			<div className="all-products container text-center">
 				<h1 style={{ borderBottom: "2px solid lightGray", padding: "6px" }}>
 					MY ORDER LISTS :-{" "}
-					<strong className="text-info ">{orders.length}</strong>
+					<strong className="text-info ">{orders?.length}</strong>
 				</h1>
 				<div className="row  text-center">
-					{orders?.map((pd, index) => (
-						<div className="col-md-6 col-lg-4">
+					{orders.map((order, index) => (
+						<div key={order._id} className="col-md-6 col-lg-4">
 							<div className=" border border p-2 m-2">
-								<strong>Email: {pd.email}</strong>
+								<strong>Email: {order?.email}</strong>
 								<br />
 								<p>
-									{pd?.name} <br />{" "}
-									<small className="text-warning fs-4">{pd?.price}</small>
+									{order?.name} <br />{" "}
+									<small className="text-warning fs-4">{order?.price}</small>
 								</p>
 								<button className="btn btn-info m-2">Pending</button>
 								<button className="btn btn-success m-2">Update</button>
-								<button className="btn btn-danger m-2">Delete</button>
+								<button onClick={() => handleDeleteUser(order?._id)}>
+									Delete
+								</button>
 							</div>
 						</div>
 					))}

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddEvent from "./components/AddEvent/AddEvent";
-// import ApplyPage from "./components/ApplyPage/ApplyPage";
 import Contacts from "./components/Home/Contacts/Contacts";
 import Home from "./components/Home/Home/Home";
 import ManageOrder from "./components/ManageOrder/ManageOrder";

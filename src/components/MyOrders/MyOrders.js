@@ -49,7 +49,6 @@ const MyOrders = () => {
 							<div className=" border border p-2 m-2">
 								<strong>Email: {order?.email}</strong>
 								<br />
-
 								<p>
 									{order?.name} <br />{" "}
 									<small className="text-warning fs-4">{order?.price}</small>

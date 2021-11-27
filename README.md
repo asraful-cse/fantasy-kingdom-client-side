@@ -1,13 +1,15 @@
 # FANTASY KINGDOM
 
-- Online ticket collection and order systems.
+- Technologies: React JS, React Router, React Hook Form, Node JS, Node Express, MongoDB, Firebase Authentication & Hosting, Bootstrap, Css3, Heroku, React Icons, Axios.
 
-- How to avail: Customers have to show the soft copy of this invoice to the information counter of Fantasy Kingdom Complex.
+- It is a ticket booking site where users can book their ride plans. To book a plan, a login is required. They can cancel the order and can check the order status.
 
-- Fantasy Kingdom - Ticket Price, Offer Discount.
+- An administrator/site owner can add or delete a service and approve or delete user orders for testing purposes, all users have administrative access.
 
-- There are various packages available to visit the Fantasy Kingdom.
+- A fully functional and responsive site has been created based on MERN. It uses CRUD operation and has a sign-up / sign-in system.
 
-- The Fantasy Kingdom Complex, commonly known as Fantasy Kingdom, is an entertainment complex in Ashulia, Savar, Bangladesh
+* There are various packages available to visit the Fantasy Kingdom.
+
+* The Fantasy Kingdom Complex, commonly known as Fantasy Kingdom, is an entertainment complex in Ashulia, Savar, Bangladesh
 
 ## LIVE LINK : [https://fantasy-kingdom-e8dbc.web.app/]

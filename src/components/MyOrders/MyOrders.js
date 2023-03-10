@@ -8,7 +8,7 @@ const MyOrders = () => {
 	const email = user.email;
 
 	useEffect(() => {
-		fetch(`https://desolate-brook-49511.herokuapp.com/myOrders/${email}`)
+		fetch(`https://fantasy-kingdom-server.onrender.com/myOrders/${email}`)
 			.then((res) => res.json())
 			.then((data) => setOrders(data));
 	}, [email]);
@@ -18,7 +18,7 @@ const MyOrders = () => {
 	const handleDeleteUser = (id) => {
 		const proceed = window.confirm("Are you sure, you want to delete?");
 		if (proceed) {
-			const url = `https://desolate-brook-49511.herokuapp.com/myOrders/${id}`;
+			const url = `https://fantasy-kingdom-server.onrender.com/myOrders/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})

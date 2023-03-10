@@ -27,11 +27,11 @@ const Navbar = () => {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div
-						className="collapse navbar-collapse fw-bold"
+						className="collapse navbar-collapse "
 						id="navbarNavAltMarkup"
 						style={{ marginTop: "26px" }}
 					>
-						<div className="navbar-nav ms-auto">
+						<div className="navbar-nav ms-auto mask flex-center rgba-red-strong">
 							<Link to="/home" className="nav-link">
 								HOME
 							</Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
 								ADD SERVICE
 							</Link>
 							<Link to="/manageOrder" className="nav-link">
-								MANAGE ALL ORDERS
+								MANAGE-ORDERS
 							</Link>
 							{user.email && (
 								<div>

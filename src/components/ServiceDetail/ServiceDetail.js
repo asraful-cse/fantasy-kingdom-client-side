@@ -8,7 +8,7 @@ const ServiceDetail = () => {
 	const [data, setData] = useState([]);
 	// const [products, setData] = useState([]);
 	useEffect(() => {
-		fetch("https://desolate-brook-49511.herokuapp.com/products")
+		fetch("https://fantasy-kingdom-server.onrender.com/products")
 			.then((res) => res.json())
 			.then((data) => setData(data));
 	}, []);
@@ -20,7 +20,7 @@ const ServiceDetail = () => {
 		const indexAdded = data[index];
 		indexAdded.email = user?.email;
 		console.log(data);
-		fetch(`https://desolate-brook-49511.herokuapp.com/addOrder`, {
+		fetch(`https://fantasy-kingdom-server.onrender.com/addOrder`, {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(indexAdded),

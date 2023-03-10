@@ -42,7 +42,7 @@ const HeaderMain = () => {
 						alt="..."
 					/>
 					<div className="carousel-caption d-none d-md-block banner_blur">
-						<h1 style={{ color: "rgb(78 29 54 / 95%)" }} className="fw-bold">
+						<h1 style={{ color: "#011527" }} className="fw-bold">
 							FUN FOR <br /> THE WHOLE FAMILY
 						</h1>
 						<br />
